@@ -1,0 +1,60 @@
+# Tên khách hàng
+while True:
+    n = input("Hãy Nhập tên: ") # nhập tên khách hàng
+    h = n.split(' ') 
+    for i in range(len(h)): # tạo vòng lặp cho h
+        if(not (h[i].isalpha()) or (h[i].isdigit())): # điều kiện không phải là chữ hoặc số/kí tự
+            print("Hãy nhập lại:") 
+            break 
+    else: 
+        print("Ho ten: ", ' '.join(h)) 
+        break 
+
+# Mã tài khoản
+def mkh():
+    import random # xuất hàm random ra
+    tk = random.randint(100000,20000000)
+    print(f"Mã khách Hàng: KH{str(tk)}")
+mkh()
+
+# Chhứng Minh Thư
+def CMTKH():
+    import random # xuất hàm random ra
+    cmt = random.randint(100000000000,999999999999)
+    print(f"Chứng Minh Thư: {cmt}") # Dùng Random cho chạy 12 số
+CMTKH()
+# Số Điện Thoại
+def SDTKH():
+    import random # xuất hàm random ra
+    sdt = random.randint(111111111,999999999)
+    print(f"Số Điện Thoại: 0{str(sdt)}")
+SDTKH()
+# Thông tin cấp độ thành viên
+def tt():
+    Y = int (input("Nhập giá tiền dịch vụ: ")) # Nhập giá tiền dịch vụ
+    import random # xuất hàm random ra
+    DTL = random.randint(100000,20000000)
+    print(f"Số tiền đẫ tích lũy là: {DTL}")
+# Dùng if để xét thông tin cấp độ khách hàng và 
+    if DTL < 1000000:
+        print("---Thành viên normal---\n---Được giảm 0.1%---")
+        Y = Y - (Y*0.001)
+        print(f"Tổng giá tiền: {Y}")
+
+    elif 1000000 <= DTL < 2500000:
+        print("---Thành viên silver---\n---Được giảm 1%---")
+        Y = Y - (Y*0.01)
+        print(f"Tổng giá tiền: {Y}")
+    if 2500000 <= DTL < 5000000:
+        print("---Thành viên gold---\n---Được giảm 3%---")
+        Y = Y - (Y*0.03)
+        print(f"Tổng giá tiền: {Y}")
+    elif 5000000 <= DTL < 10000000:
+        print("---Thành viên diamond---\n---Được giảm 5%---")
+        Y = Y - (Y*0.05)
+        print(f"Tổng giá tiền: {Y}")
+    else:
+        print("---Thành viên vip---\n---Được giảm 10%---")
+        Y = Y - (Y*0.1)
+        print(f"Tổng giá tiền: {Y}")
+tt()
